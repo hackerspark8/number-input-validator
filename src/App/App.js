@@ -47,7 +47,7 @@ export default class App extends React.Component {
     const inputValues = value.split("-");
     let values = [];
     if (inputValues.length !== 2) {
-      return undefined;
+      return [];
     } else {
       let value = parseInt(inputValues[0], 10);
       const maxValue = parseInt(inputValues[1], 10);
