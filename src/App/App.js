@@ -49,10 +49,12 @@ export default class App extends React.Component {
     if (inputValues.length !== 2) {
       return [];
     } else {
-      let value = parseInt(inputValues[0], 10);
-      const maxValue = parseInt(inputValues[1], 10);
-      while (value <= maxValue) {
-        values.push(value++);
+      const firstValue = parseInt(inputValues[0], 10);
+      const lastValue = parseInt(inputValues[1], 10);
+      let min = firstValue <= lastValue ? firstValue : lastValue;
+      let max = min === firstValue ? lastValue : firstValue;
+      while (min <= max) {
+        values.push(min++);
       }
       return values;
     }
